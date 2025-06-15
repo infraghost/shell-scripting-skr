@@ -56,7 +56,7 @@ rm -rf /app/* &>>$LOGFILE
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Extracted backend code"
 
-npm install &>>$LOGGING
+npm install &>>$LOGFILE
 VALIDATE $? "Installing nodejs dependencies"
 
 cp /home/ec2-user/shell-scripting-skr/expense-shell/backend.service /etc/systemd/system/backend.service
@@ -74,7 +74,7 @@ VALIDATE $? "Enabling Backend"
 dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing MySql Clinet"
 
-mysql -h db.thehsk.xyz -uroot -p"${mysql_root_password}" < /app/schema/backend.sql &>>$LOGFILE
+mysql -h 3.89.2.223 -uroot -p"${mysql_root_password}" < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $? "Loading Schema"
 
 systemctl restart backend &>>$LOGFILE
