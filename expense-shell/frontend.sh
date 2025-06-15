@@ -45,7 +45,7 @@ VALIDATE $? "Moving to Default home directory"
 unzip /tmp/frontend.zip &>>$LOGFILE
 VALIDATE $? "Unziping the code"
 
-cp /home/ec2-user/shell-scripting-skr/expense-shell/expense-shell /etc/nginx/default.d/expense.conf &>>$LOGFILE
+cp /home/ec2-user/shell-scripting-skr/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
 VALIDATE $? "Copied Expense configuration file"
 
 nginx -t &>>$LOGFILE
