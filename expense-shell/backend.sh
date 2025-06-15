@@ -74,8 +74,16 @@ VALIDATE $? "Enabling Backend"
 dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing MySql Clinet"
 
-mysql -h 3.89.2.223 -uroot -p"${mysql_root_password}" < /app/schema/backend.sql &>>$LOGFILE
-VALIDATE $? "Loading Schema"
+# mysql -h 3.89.2.223 -uroot -p"${mysql_root_password}" < /app/schema/backend.sql &>>$LOGFILE
+# VALIDATE $? "Loading Schema"
+
+if [ -f /app/schema/backend.sql ]; then
+    mysql -h 3.89.2.223 -uroot -p"${mysql_root_password}" < /app/schema/backend.sql &>>$LOGFILE
+    VALIDATE $? "Loading Schema"
+else
+    echo -e "$RED Schema file not found, skipping schema load $NO"
+fi
+
 
 systemctl restart backend &>>$LOGFILE
 VALIDATE $? "Restarting Backend"
