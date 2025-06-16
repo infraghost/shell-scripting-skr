@@ -7,7 +7,7 @@ NO="\e[0m"
 
 COURSE="Cloud From Current Script"
 
-echo "$GREEN Before calling other script, Course:$NO $COURSE"
-echo "$GREEN Process ID of Other script:$NO $$"
+echo -e "$GREEN Before calling other script, Course: $COURSE"
+echo -e "$GREEN Process ID of Other script: $$"
 
-echo "$RED 16-Other Script $NO"
+echo -e "$RED 16-Other Script "
