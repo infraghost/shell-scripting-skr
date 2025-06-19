@@ -30,6 +30,6 @@ fi
 
 # find /tmp/app-logs -name "*.log" -mtime +14
 
-FILES=$(find /tmp/app-logs -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "Deleting $FILES"
