@@ -7,6 +7,6 @@ handle_error(){
 }
 
 
-trap 'handle_error ${LINENO} "${BASH_COMMAND}"' ERR
+trap 'handle_error "$LINENO" "$BASH_COMMAND"' ERR
 
-apt install gittttt -t
+apt install gittttt -y
