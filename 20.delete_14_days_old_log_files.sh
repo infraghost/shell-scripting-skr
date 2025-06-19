@@ -30,12 +30,18 @@ fi
 
 # find /tmp/app-logs -name "*.log" -mtime +14
 
-FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+# FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
-echo "Deleting $FILES"
+# echo "Deleting $FILES"
 
-while IFS= read -r line
+# while IFS= read -r line
+# do
+#     echo "Deleting file: $line"
+#     rm -f $line
+# done <<< $FILES
+
+find "$SOURCE_DIRECTORY" -name "*.log" -mtime +14 | while IFS= read -r line
 do
-    echo "Deleting file: $line"
-    rm -f $line
-done <<< $FILES
+    echo -e "${YELLOW}Deleting file: $line${NO}"
+    rm -f "$line"
+done
