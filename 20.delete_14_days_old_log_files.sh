@@ -18,7 +18,7 @@ YELLOW="\e[33m"
 NO="\e[0m"
 
 echo "Please enter DB Password:"
-read -s SOURCE_DIRECTORY
+read SOURCE_DIRECTORY
 
 #Checking if folder exist or not
 if [ -d $SOURCE_DIRECTORY ]
