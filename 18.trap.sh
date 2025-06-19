@@ -1,12 +1,24 @@
+# #!/bin/bash
+
+# set -e
+
+# handle_error(){
+#     echo "Error Occured at line number: $1, error command is $2"
+# }
+
+
+# trap 'handle_error "$LINENO" "$BASH_COMMAND"' ERR
+
+# apt install gittttt -y
+
 #!/bin/bash
 
 set -e
 
 handle_error(){
-    echo "Error Occured at line number: $1, error command is $2"
+    echo "Error occurred at line number: $1, error command is $2"
 }
-
 
 trap 'handle_error "$LINENO" "$BASH_COMMAND"' ERR
 
-apt install gittttt -y
+apt install gittttt -t
